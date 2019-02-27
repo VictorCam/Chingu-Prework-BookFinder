@@ -1,0 +1,148 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+}
+
+header {
+  background-color: #000;
+  display: flex;
+  position: relative;
+}
+
+header a {
+  color: #fff;
+}
+
+.header-image
+{
+  margin: 0 0 0 30%;
+}
+
+.header-title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 80px;
+  font-weight: 100;
+  margin: 0 0 0 20px;
+  text-align: center;
+  padding-top: 30px;
+}
+
+.header-title a:hover {
+  text-decoration: none;
+}
+
+.find-input-container {
+  width: 45%;
+  display: flex;
+}
+
+.find-input {
+  font-size: 20px;
+  flex: 1 auto;
+  margin-left: 10px;
+  padding: 3px;
+  border: 1px solid #dadada;
+  border-radius: 3px;
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+}
+
+.search-container div {
+  margin: 20px auto;
+}
+
+.button {
+  font-size: 20px;
+  color: white;
+  padding: 10px;
+  background-color: #000;
+  border: 1px solid #ababab;
+  border-radius: 5px;
+  font-weight: lighter;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #FFE4E1;
+  border-color: #333;
+  color: #333;
+}
+
+
+/*ALL POST STYLE*/
+
+.post {
+  font-size: 15px;
+  display: inline-block;
+  vertical-align: top;
+  height: 350px;
+  width: 300px;
+  margin: 30px;
+  padding: 10px;
+  border: 1px solid #dadada;
+  background-color: #FFE4E1;
+  border-radius: 3px;
+  align-items: center;
+}
+
+.post-contents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.post-image-container img {
+  max-height: 200px;
+  max-width: 260px;
+}
+
+.post-info-container {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.post-check-container button {
+  font-size: 20px;
+  color: white;
+  padding: 10px;
+  background-color: #000;
+  border: 1px solid #ababab;
+  border-radius: 5px;
+  font-weight: lighter;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.post-check-container button:hover {
+  background-color: #FFE4E1;
+  border-color: black;
+  color: black;
+  padding: 10px;
+  border: 1px solid #ababab;
+  border-radius: 5px;
+  font-weight: lighter;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+span {
+  display: block;
+  padding: 5px;
+}
+
+.buttoncard {
+  width: 200px;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

@@ -97,17 +97,17 @@ header a {
 }
 
 .post-image-container img {
-  max-height: 200px;
-  max-width: 260px;
+  max-height: 180px;
+  max-width: 240px;
 }
 
 .post-info-container {
   width: 100%;
-  margin-top: 10px;
+  margin-top: 3px;
 }
 
 .post-check-container button {
-  font-size: 20px;
+  font-size: 17px;
   color: white;
   padding: 10px;
   background-color: #000;
@@ -115,7 +115,7 @@ header a {
   border-radius: 5px;
   font-weight: lighter;
   cursor: pointer;
-  margin-top: 10px;
+  margin-top: 5px;
 }
 
 .post-check-container button:hover {
@@ -127,12 +127,15 @@ header a {
   border-radius: 5px;
   font-weight: lighter;
   cursor: pointer;
-  margin-top: 10px;
+}
+
+.title{
+  font-weight: bold;
 }
 
 span {
   display: block;
-  padding: 5px;
+  padding: 2px;
 }
 
 .buttoncard {

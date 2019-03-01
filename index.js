@@ -1,9 +1,12 @@
-
 var find = document.getElementById('find');
 var allPosts = document.getElementById('posts');
 var button = document.getElementById('button');
+var remove = document.getElementById("post");
+var search = document.getElementById("find");
+var postlength = document.getElementsByClassName("post");
+//note that I reuse some elementid's mutiple times just to keep track where I am inserting into the dom
 
-function insertpost(img, caption, author, publisher, condition2) {
+function insertpost(img, title, author, publisher, caption, link) {
   var Div0 = document.createElement('div');
   var authortitle = "Author: ";
   var titletitle = "Title: ";
@@ -11,9 +14,10 @@ function insertpost(img, caption, author, publisher, condition2) {
   var seebook = "See this book";
 
   Div0.classList.add('post');
-  Div0.setAttribute('title', author);
-  Div0.setAttribute('authors', publisher);
-  Div0.setAttribute('publisher', condition2);
+  Div0.setAttribute("id", "post");
+  Div0.setAttribute('title', title);
+  Div0.setAttribute('authors', author);
+  Div0.setAttribute('publisher', publisher);
 
   var Div = document.createElement('div');
   Div.classList.add('post-contents');
@@ -34,7 +38,7 @@ function insertpost(img, caption, author, publisher, condition2) {
 
   var span1 = document.createElement("span");
   span1.classList.add("title")
-  span1.textContent = (titletitle + "Noobbyyyyy");
+  span1.textContent = (titletitle + title);
   Div2.appendChild(span1);
 
   var span2 = document.createElement("span");
@@ -53,35 +57,53 @@ function insertpost(img, caption, author, publisher, condition2) {
 
   var button = document.createElement("button");
   button.classList.add('buttoncard');
+  button.setAttribute('onclick', "location.href=" + "'" + link + "';");
   button.textContent = (seebook);
   Div3.appendChild(button);
 
   allPosts.appendChild(Div0);
 }
 
+search.addEventListener("keyup", function(event) {
+event.preventDefault();
+if (event.keyCode === 13) {
+    button.click();
+}
+});
+
 button.addEventListener("click", function()
 {
-  if(!find.value || find.value == "" || find.value ==null || find.value.trim() == "")
+  if(!find.value || find.value == "" || find.value == null || find.value.trim() == "")
   {
     alert("Please enter a name or author in the search box");
   }
   else
   {
-      var img = "https://www.scholastic.com/content5/media/products/22/9781338037722_mres.jpg"
-      console.log("input for image is: ", img);
-
-      var caption = "book";
-      console.log("input for caption is: ", caption);
-
-      var author = "Mark Succlburg";
-      console.log("input for author is: ", author);
-
-      var publisher = "NYTimes Bookz";
-      console.log("input for publisher is: ", publisher);
-
-      var condition2 = "fart";
-      console.log("input for condition2 is: ", condition2);
-    insertpost(img,caption,author,publisher,condition2);
+  removeposts();
+  endpoint = 'https://www.googleapis.com/books/v1/volumes?q=' + find.value;
+fetch(endpoint).then(function(response) {
+  return response.json();
+}).then(function(json) {
+  let {items} = json;
+  for(var i = 0; i < items.length; i++) {
+  img = items[i].volumeInfo.imageLinks.smallThumbnail;
+  title = items[i].volumeInfo.title;
+  author = items[i].volumeInfo.authors;
+  publisher = items[i].volumeInfo.publisher;
+  caption = items[i].volumeInfo.description;
+  link = items[i].volumeInfo.infoLink;
+  insertpost(img, title, author, publisher, caption, link);
+  }
+})
   }
 }
 );
+
+function removeposts(){
+  if(postlength.length != null){
+    for (var j = 0; j < postlength.length; j++) {
+      postlength[j].remove();
+      j--;
+    }
+  }
+}

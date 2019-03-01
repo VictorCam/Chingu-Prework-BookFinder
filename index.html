@@ -2,6 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/png" href="images/barcode.png"/>
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="index.js" charset="utf-8" defer></script>
@@ -15,7 +16,7 @@
       <img class="logo" src="images/barcode.png" alt="barcode logo">
     </div>
 
-    <h1 class="header-title"><a href="#">Book Finder</a><h1>
+    <h1 class="header-title" onClick="window.location.reload()"><a href="#">Book Finder</a><h1>
 
     </header>
 
@@ -30,36 +31,7 @@
       </div>
 
       <section id="posts">
-
-        <div class="post" title="" authors="" publisher="">
-          <div class="post-contents">
-            <div class="post-image-container">
-              <img src="images/test1.jpg" alt="book">
-            </div>
-            <div class="post-info-container">
-              <span class="title">Book: A la recherche du temps perdu</span> <span class="authors">Author: Memer McMeme</span> <span class="publisher">Publisher: ROBLOX</span>
-            </div>
-            <div class="post-check-container">
-              <button class="buttoncard">See this book</button>
-            </div>
-          </div>
-        </div>
-
-
-<!----
-        <div id="content"></div>
-<script>
-  function handleResponse(response) {
-  for (var i = 0; i < response.items.length; i++) {
-    var item = response.items[i];
-    // in production code, item.text should have the HTML entities escaped.
-    document.getElementById("content").innerHTML += "<br>" + item.volumeInfo.title + " ";
-  }
-}
-</script>
-<script src="https://www.googleapis.com/books/v1/volumes?q=harry+potter&callback=handleResponse"></script>
----->
-
+      <!--ALL POSTS GO HERE-->
       </section>
     </main>
 

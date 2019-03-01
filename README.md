@@ -1,12 +1,15 @@
 # Chingu-Prework-Project-Book-Finder
 
 **Summary**
+
 This project is basically a book finder. We need to integrate it with the Google Books API. The Purpose of this project is to make API calls and dealing with edge cases.
 
 **Used Resources**
+
 HTML, CSS, Vanilla Javascript
 
 **Requirements from Chingu**
+
 -Enter a query in a search box
 
 -Display a list of books matching the given query.

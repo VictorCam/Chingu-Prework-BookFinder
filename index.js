@@ -85,6 +85,10 @@ fetch(endpoint).then(function(response) {
   return response.json();
 }).then(function(json) {
   let {items} = json;
+  if(items === undefined){
+    alert("Please enter a more appropriate response");
+  }
+  else{
   for(var i = 0; i < items.length; i++) {
   img = items[i].volumeInfo.imageLinks.smallThumbnail;
   title = items[i].volumeInfo.title;
@@ -94,6 +98,7 @@ fetch(endpoint).then(function(response) {
   link = items[i].volumeInfo.infoLink;
   insertpost(img, title, author, publisher, caption, link);
   }
+}
 })
   }
 }

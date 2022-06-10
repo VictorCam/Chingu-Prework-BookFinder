@@ -1,7 +1,5 @@
 # Chingu-Prework-Project-Book-Finder
 
-describing the app's purpose, major functions, dependencies, and build/deploy instructions
-
 **App's Purpose**
 
 This project is basically a book finder. We needed to integrate it with the Google Books API. The Purpose of this project is to make API calls, dealing with edge cases, and creating a navigatable interface.

@@ -1,26 +1,26 @@
 body {
   font-family: 'Montserrat', sans-serif;
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 header {
   background-color: #000;
   display: flex;
-  position: relative;
 }
 
 header a {
   color: #fff;
 }
 
-.header-image
-{
-  margin: 0 0 0 30%;
+.header-image {
+  margin: 0 auto;
+  display: flex;
 }
 
 .header-title {
-  font-family: "Montserrat", sans-serif;
-  font-size: 80px;
+  font-size: 0;
   font-weight: 100;
   margin: 0 0 0 20px;
   text-align: center;
@@ -74,26 +74,24 @@ header a {
 
 /*ALL POST STYLE*/
 
+section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
 .post {
   font-size: 15px;
-  display: inline-block;
-  vertical-align: top;
-  height: 350px;
-  width: 300px;
   margin: 30px;
   padding: 10px;
   border: 1px solid #dadada;
   background-color: #FFE4E1;
   border-radius: 3px;
-  align-items: center;
 }
 
 .post-contents {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100%;
-  width: 100%;
 }
 
 .post-image-container img {
@@ -102,7 +100,6 @@ header a {
 }
 
 .post-info-container {
-  width: 100%;
   margin-top: 3px;
 }
 
@@ -129,7 +126,7 @@ header a {
   cursor: pointer;
 }
 
-.title{
+.title {
   font-weight: bold;
 }
 
@@ -148,4 +145,10 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+@media (min-width: 40em) {
+  .header-title {
+    font-size: 80px;
+  }
 }
